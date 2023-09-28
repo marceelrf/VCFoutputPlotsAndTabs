@@ -1,0 +1,54 @@
+Tag	ID	Number	Type	Description
+INFO	NS	1	Integer	Number of samples with data
+INFO	DP	1	Integer	Total read depth at the locus
+INFO	DPB	1	Float	Total read depth per bp at the locus; bases in reads overlapping / bases in haplotype
+INFO	AC	A	Integer	Total number of alternate alleles in called genotypes
+INFO	AN	1	Integer	Total number of alleles in called genotypes
+INFO	AF	A	Float	Estimated allele frequency in the range (0,1]
+INFO	RO	1	Integer	Count of full observations of the reference haplotype.
+INFO	AO	A	Integer	Count of full observations of this alternate haplotype.
+INFO	PRO	1	Float	Reference allele observation count, with partial observations recorded fractionally
+INFO	PAO	A	Float	Alternate allele observations, with partial observations recorded fractionally
+INFO	QR	1	Integer	Reference allele quality sum in phred
+INFO	QA	A	Integer	Alternate allele quality sum in phred
+INFO	PQR	1	Float	Reference allele quality sum in phred for partial observations
+INFO	PQA	A	Float	Alternate allele quality sum in phred for partial observations
+INFO	SRF	1	Integer	Number of reference observations on the forward strand
+INFO	SRR	1	Integer	Number of reference observations on the reverse strand
+INFO	SAF	A	Integer	Number of alternate observations on the forward strand
+INFO	SAR	A	Integer	Number of alternate observations on the reverse strand
+INFO	SRP	1	Float	Strand balance probability for the reference allele: Phred-scaled upper-bounds estimate of the probability of observing the deviation between SRF and SRR given E(SRF/SRR) ~ 0.5, derived using Hoeffding's inequality
+INFO	SAP	A	Float	Strand balance probability for the alternate allele: Phred-scaled upper-bounds estimate of the probability of observing the deviation between SAF and SAR given E(SAF/SAR) ~ 0.5, derived using Hoeffding's inequality
+INFO	AB	A	Float	Allele balance at heterozygous sites: a number between 0 and 1 representing the ratio of reads showing the reference allele to all reads, considering only reads from individuals called as heterozygous
+INFO	ABP	A	Float	Allele balance probability at heterozygous sites: Phred-scaled upper-bounds estimate of the probability of observing the deviation between ABR and ABA given E(ABR/ABA) ~ 0.5, derived using Hoeffding's inequality
+INFO	RUN	A	Integer	Run length: the number of consecutive repeats of the alternate allele in the reference genome
+INFO	RPP	A	Float	Read Placement Probability: Phred-scaled upper-bounds estimate of the probability of observing the deviation between RPL and RPR given E(RPL/RPR) ~ 0.5, derived using Hoeffding's inequality
+INFO	RPPR	1	Float	Read Placement Probability for reference observations: Phred-scaled upper-bounds estimate of the probability of observing the deviation between RPL and RPR given E(RPL/RPR) ~ 0.5, derived using Hoeffding's inequality
+INFO	RPL	A	Float	Reads Placed Left: number of reads supporting the alternate balanced to the left (5') of the alternate allele
+INFO	RPR	A	Float	Reads Placed Right: number of reads supporting the alternate balanced to the right (3') of the alternate allele
+INFO	EPP	A	Float	End Placement Probability: Phred-scaled upper-bounds estimate of the probability of observing the deviation between EL and ER given E(EL/ER) ~ 0.5, derived using Hoeffding's inequality
+INFO	EPPR	1	Float	End Placement Probability for reference observations: Phred-scaled upper-bounds estimate of the probability of observing the deviation between EL and ER given E(EL/ER) ~ 0.5, derived using Hoeffding's inequality
+INFO	DPRA	A	Float	Alternate allele depth ratio.  Ratio between depth in samples with each called alternate allele and those without.
+INFO	ODDS	1	Float	The log odds ratio of the best genotype combination to the second-best.
+INFO	GTI	1	Integer	Number of genotyping iterations required to reach convergence or bailout.
+INFO	TYPE	A	String	The type of allele, either snp, mnp, ins, del, or complex.
+INFO	CIGAR	A	String	' is replaced by 'M' to ease VCF parsing.  Note that INDEL alleles do not have the first matched base (which is provided by default, per the spec) referred to by the CIGAR.
+INFO	NUMALT	1	Integer	Number of unique non-reference alleles in called genotypes at this position.
+INFO	MEANALT	A	Float	Mean number of unique non-reference allele observations per sample with the corresponding alternate alleles.
+INFO	LEN	A	Integer	allele length
+INFO	MQM	A	Float	Mean mapping quality of observed alternate alleles
+INFO	MQMR	1	Float	Mean mapping quality of observed reference alleles
+INFO	PAIRED	A	Float	Proportion of observed alternate alleles which are supported by properly paired read fragments
+INFO	PAIREDR	1	Float	Proportion of observed reference alleles which are supported by properly paired read fragments
+INFO	MIN_DP	1	Integer	Minimum depth in gVCF output block.
+INFO	END	1	Integer	Last position (inclusive) in gVCF output record.
+FORMAT	gt_GT	1	String	Genotype
+FORMAT	gt_GQ	1	Float	Genotype Quality, the Phred-scaled marginal (or unconditional) probability of the called genotype
+FORMAT	gt_GL	G	Float	Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy
+FORMAT	gt_DP	1	Integer	Read Depth
+FORMAT	gt_AD	R	Integer	Number of observation for each allele
+FORMAT	gt_RO	1	Integer	Reference allele observation count
+FORMAT	gt_QR	1	Integer	Sum of quality of the reference observations
+FORMAT	gt_AO	A	Integer	Alternate allele observation count
+FORMAT	gt_QA	A	Integer	Sum of quality of the alternate observations
+FORMAT	gt_MIN_DP	1	Integer	Minimum depth in gVCF output block.
